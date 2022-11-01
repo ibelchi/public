@@ -1,0 +1,34 @@
+"""
+Since smartphones and reflex digital cameras
+have different pictures proportions
+i never know wich picture sizes i can print
+my photographs without having to cut a part
+of them.
+"""
+#photographs sizes lists
+proportion_1_3 = ["15x11","17x13","20x15","24x18","25x20","27x20","30x22","30x24","40x30"]
+proportion_1_4 = ["13x9","14x10","18x13","26x18"]
+proportion_1_5 = ["15x10","30x20","45x30","60x40","75x50"]
+
+print("Escribe el tamaño de la imagen:")
+try:
+    a = int(input("Número de píxeles de un lado: "))
+except:
+    print("Debes introducir un número, vuelve a empezar, por favor")
+else:
+    try:
+        b = int(input("Número de píxeles del otro lado: "))
+    except:
+        print("Debes introducir un número, vuelve a empezar, por favor")
+    else:
+        if a>b:
+            proportion = a/b
+        else:
+            proportion = b/a
+print(proportion)
+if proportion >= 1.24 and proportion <= 1.34:
+    print("Las medidas de tu fotografía son: ",proportion_1_3)
+if proportion >= 1.35 and proportion <= 1.44:
+    print("Las medidas de tu fotografía son: ",proportion_1_4)
+if proportion >= 1.45 and proportion <= 1.54:
+    print("Las medidas de tu fotografía son: ",proportion_1_5)
